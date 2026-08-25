@@ -1,7 +1,8 @@
 export function Aurora() {
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-      <div
+      <div className="absolute inset-0 bg-background" />
+
         className="aurora-blob h-[46rem] w-[46rem] -left-40 -top-52"
         style={{ background: "var(--aurora-1)", animationDelay: "0s" }}
       />
