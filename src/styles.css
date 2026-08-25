@@ -43,34 +43,34 @@
 
 :root {
   --radius: 1.25rem;
-  --background: oklch(0.16 0.023 268);
-  --foreground: oklch(0.97 0.005 260);
-  --card: oklch(0.22 0.03 268);
-  --card-foreground: oklch(0.97 0.005 260);
-  --popover: oklch(0.2 0.03 268);
-  --popover-foreground: oklch(0.97 0.005 260);
-  --primary: oklch(0.78 0.15 195);
-  --primary-foreground: oklch(0.16 0.03 268);
-  --secondary: oklch(0.28 0.04 272);
-  --secondary-foreground: oklch(0.97 0.005 260);
-  --muted: oklch(0.26 0.03 270);
-  --muted-foreground: oklch(0.74 0.02 265);
-  --accent: oklch(0.72 0.16 305);
-  --accent-foreground: oklch(0.16 0.03 268);
-  --destructive: oklch(0.62 0.21 25);
-  --destructive-foreground: oklch(0.98 0.005 260);
-  --border: oklch(1 0 0 / 12%);
-  --input: oklch(1 0 0 / 14%);
-  --ring: oklch(0.78 0.15 195 / 60%);
+  --background: oklch(0.985 0.002 260);
+  --foreground: oklch(0.21 0.015 265);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.21 0.015 265);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.21 0.015 265);
+  --primary: oklch(0.28 0.02 265);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.95 0.004 265);
+  --secondary-foreground: oklch(0.25 0.015 265);
+  --muted: oklch(0.955 0.004 265);
+  --muted-foreground: oklch(0.52 0.012 265);
+  --accent: oklch(0.6 0.02 265);
+  --accent-foreground: oklch(0.99 0 0);
+  --destructive: oklch(0.58 0.2 25);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.21 0.015 265 / 12%);
+  --input: oklch(0.21 0.015 265 / 16%);
+  --ring: oklch(0.28 0.02 265 / 35%);
 
-  --glass: oklch(1 0 0 / 6%);
-  --glass-border: oklch(1 0 0 / 14%);
-  --aurora-1: oklch(0.72 0.17 200);
-  --aurora-2: oklch(0.66 0.19 310);
-  --aurora-3: oklch(0.7 0.15 250);
+  --glass: oklch(1 0 0 / 65%);
+  --glass-border: oklch(0.21 0.015 265 / 10%);
+  --aurora-1: oklch(0.93 0.01 250);
+  --aurora-2: oklch(0.94 0.008 300);
+  --aurora-3: oklch(0.95 0.006 230);
 
-  --shadow-glass: 0 24px 70px -28px oklch(0 0 0 / 70%);
-  --shadow-glow: 0 0 60px -10px color-mix(in oklab, var(--primary) 45%, transparent);
+  --shadow-glass: 0 24px 60px -32px oklch(0.21 0.015 265 / 28%);
+  --shadow-glow: 0 0 50px -14px oklch(0.21 0.015 265 / 22%);
 }
 
 @layer base {
@@ -120,20 +120,17 @@
 
   &:hover {
     transform: translateY(-6px);
-    background: color-mix(in oklab, var(--glass) 60%, oklch(1 0 0 / 10%));
-    border-color: color-mix(in oklab, var(--primary) 45%, transparent);
-    box-shadow:
-      var(--shadow-glass),
-      0 0 50px -18px color-mix(in oklab, var(--primary) 70%, transparent);
+    background: oklch(1 0 0 / 85%);
+    border-color: color-mix(in oklab, var(--foreground) 28%, transparent);
+    box-shadow: 0 30px 70px -34px oklch(0.21 0.015 265 / 40%);
   }
 }
 
 @utility text-gradient {
   background-image: linear-gradient(
     100deg,
-    oklch(0.98 0.005 260),
-    color-mix(in oklab, var(--primary) 80%, white),
-    color-mix(in oklab, var(--accent) 80%, white)
+    var(--foreground),
+    color-mix(in oklab, var(--foreground) 55%, white)
   );
   background-clip: text;
   color: transparent;
@@ -141,7 +138,7 @@
 
 @utility text-outline {
   color: transparent;
-  -webkit-text-stroke: 1.5px color-mix(in oklab, var(--foreground) 45%, transparent);
+  -webkit-text-stroke: 1.5px color-mix(in oklab, var(--foreground) 35%, transparent);
 }
 
 @utility reveal {
@@ -182,8 +179,8 @@
 @utility aurora-blob {
   position: absolute;
   border-radius: 9999px;
-  filter: blur(90px);
-  opacity: 0.28;
+  filter: blur(100px);
+  opacity: 0.6;
   animation: aurora-drift 22s ease-in-out infinite;
   pointer-events: none;
 }
