@@ -1,20 +1,10 @@
-import { useEffect, useState } from "react";
 import { ArrowUpRight, Sparkles } from "lucide-react";
-import profile from "@/assets/profile.jpg";
 import { Reveal } from "./Reveal";
 
 export function Hero() {
-  const [offset, setOffset] = useState(0);
-
-  useEffect(() => {
-    const onScroll = () => setOffset(window.scrollY);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
-    <section id="home" className="relative flex min-h-screen items-center px-4 pb-20 pt-32">
-      <div className="mx-auto grid w-full max-w-6xl items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
+    <section id="home" className="relative flex min-h-screen items-center px-6 pb-20 pt-32">
+      <div className="mx-auto w-full max-w-7xl">
         <div>
           <Reveal>
             <span className="glass inline-flex items-center gap-2 rounded-full px-4 py-2 text-[0.7rem] uppercase tracking-[0.3em] text-muted-foreground">
