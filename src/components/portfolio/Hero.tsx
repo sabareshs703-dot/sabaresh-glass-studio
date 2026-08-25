@@ -15,8 +15,8 @@ export function Hero() {
 
           <Reveal delay={120}>
             <h1 className="mt-7 font-display text-[clamp(3.5rem,15vw,12rem)] font-extrabold leading-[0.86]">
-              <span className="text-gradient">SABA</span>
-              <span className="text-gradient">RESH</span>
+              <span className="text-foreground">SABA</span>
+              <span className="text-foreground">RESH</span>
             </h1>
           </Reveal>
 
