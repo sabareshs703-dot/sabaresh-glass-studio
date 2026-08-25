@@ -28,7 +28,7 @@ export function Nav() {
           "glass mx-auto flex max-w-5xl items-center justify-between rounded-full px-5 py-3 transition-all duration-500 sm:px-7",
           scrolled && "bg-background/70 shadow-2xl backdrop-blur-3xl",
         )}
-        style={scrolled ? { background: "oklch(0.16 0.023 268 / 72%)" } : undefined}
+        style={scrolled ? { background: "oklch(1 0 0 / 80%)" } : undefined}
       >
         <a href="#home" className="font-display text-sm font-bold tracking-[0.35em] text-foreground">
           SABARESH

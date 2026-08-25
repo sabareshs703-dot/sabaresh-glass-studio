@@ -16,10 +16,10 @@ export function Aurora() {
         style={{ background: "var(--aurora-3)", animationDelay: "-14s" }}
       />
       <div
-        className="absolute inset-0 opacity-[0.35]"
+        className="absolute inset-0 opacity-[0.5]"
         style={{
           backgroundImage:
-            "linear-gradient(to right, oklch(1 0 0 / 4%) 1px, transparent 1px), linear-gradient(to bottom, oklch(1 0 0 / 4%) 1px, transparent 1px)",
+            "linear-gradient(to right, oklch(0.21 0.015 265 / 5%) 1px, transparent 1px), linear-gradient(to bottom, oklch(0.21 0.015 265 / 5%) 1px, transparent 1px)",
           backgroundSize: "80px 80px",
           maskImage: "radial-gradient(ellipse at 50% 0%, black, transparent 75%)",
         }}
