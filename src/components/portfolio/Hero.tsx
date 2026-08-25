@@ -1,5 +1,6 @@
 import { ArrowUpRight, Sparkles } from "lucide-react";
 import { Reveal } from "./Reveal";
+import { SplitText } from "./SplitText";
 
 export function Hero() {
   return (
@@ -14,9 +15,8 @@ export function Hero() {
           </Reveal>
 
           <Reveal delay={120}>
-            <h1 className="mt-7 font-display text-[clamp(3.5rem,15vw,12rem)] font-extrabold leading-[0.86]">
-              <span className="text-foreground">SABA</span>
-              <span className="text-foreground">RESH</span>
+            <h1 className="mt-7 font-display text-[clamp(3.5rem,15vw,12rem)] font-extrabold leading-[0.86] text-foreground">
+              <SplitText text="SABARESH" startDelay={150} stagger={70} duration={900} />
             </h1>
           </Reveal>
 
