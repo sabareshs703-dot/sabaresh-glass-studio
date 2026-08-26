@@ -6,10 +6,29 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
+const isGitHubPages = process.env["GITHUB_ACTIONS"] === "true";
+const basePath = isGitHubPages ? "/sabaresh-glass-studio/" : "/";
+
 export default defineConfig({
+  // GitHub Pages only needs the prerendered static client bundle.
+  nitro: isGitHubPages ? false : true,
+  vite: {
+    base: basePath,
+  },
   tanstackStart: {
-    // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-    // nitro/vite builds from this
-    server: { entry: "server" },
+    prerender: {
+      enabled: true,
+      autoStaticPathsDiscovery: false,
+      crawlLinks: false,
+      failOnError: true,
+    },
+    pages: [
+      {
+        path: basePath,
+        prerender: { enabled: true, outputPath: "/index.html" },
+      },
+    ],
+    // Keep the custom SSR wrapper for server builds; Pages is fully static.
+    ...(isGitHubPages ? {} : { server: { entry: "server" } }),
   },
 });
